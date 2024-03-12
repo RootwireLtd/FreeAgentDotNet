@@ -29,4 +29,13 @@ public class ContactService
 
         return response;
     }
+
+    public async Task<RestResponse<ContactResponseModel>> GetByIdAsync(int id)
+    {
+        var request = new RestRequest($"{BasePath}/{id}", Method.Get);
+
+        var response = await _client.RestClient.ExecuteAsync<ContactResponseModel>(request);
+
+        return response;
+    }
 }

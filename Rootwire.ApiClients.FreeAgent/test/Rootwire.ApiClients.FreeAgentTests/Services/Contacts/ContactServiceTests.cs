@@ -29,5 +29,13 @@ public class ContactServiceTests : BaseFreeAgentTest
         Assert.Equal(HttpStatusCode.Created, contactResponseModel.StatusCode);
     }
 
+    [Fact]
+    public async Task GetById()
+    {
+        var response = await _service.GetByIdAsync(145970);
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal("TESTORG - KEEP THIS", response.Data.Contact.OrganisationName);
+    }
+
 
 }
