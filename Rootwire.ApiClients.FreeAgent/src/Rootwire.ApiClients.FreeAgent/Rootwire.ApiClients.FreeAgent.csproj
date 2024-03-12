@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>0.0.1</Version>
+        <Version>0.0.1-alpha</Version>
         <Authors>Rootwire Ltd</Authors>
         <Description>A .Net Rest API Client for FreeAgent</Description>
         <Copyright>Copyright (c) Rootwire Ltd 2024</Copyright>
