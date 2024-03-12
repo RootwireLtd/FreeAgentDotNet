@@ -1,8 +1,9 @@
 ﻿using System.Text.Json.Serialization;
+using Rootwire.ApiClients.FreeAgent.Entities._base;
 
 namespace Rootwire.ApiClients.FreeAgent.Entities.Contacts;
 
-public class Contact
+public class Contact : FreeAgentEntity
 {
     [JsonPropertyName("url")]
     public Uri Url { get; set; }
