@@ -38,4 +38,15 @@ public class ContactService
 
         return response;
     }
+
+    public async Task<RestResponse<ContactListResponseModel>> GetAllAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task<RestResponse<ContactResponseModel>> DeleteAsync(int id)
+    {
+        throw new NotImplementedException();
+    }
+    
 }
