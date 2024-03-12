@@ -25,8 +25,4 @@
       <ProjectReference Include="..\..\src\Rootwire.ApiClients.FreeAgent\Rootwire.ApiClients.FreeAgent.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Services\Categories\" />
-    </ItemGroup>
-
 </Project>
