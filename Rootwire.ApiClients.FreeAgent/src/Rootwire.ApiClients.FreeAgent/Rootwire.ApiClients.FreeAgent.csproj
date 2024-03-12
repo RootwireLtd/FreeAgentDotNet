@@ -6,6 +6,8 @@
         <Nullable>enable</Nullable>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Version>0.0.1-alpha</Version>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <Authors>Rootwire Ltd</Authors>
         <Description>A .Net Rest API Client for FreeAgent</Description>
         <Copyright>Copyright (c) Rootwire Ltd 2024</Copyright>
@@ -19,6 +21,7 @@
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="RestSharp" Version="110.2.0" />
       <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="110.2.0" />
+        <None Include="..\..\..\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
 </Project>
