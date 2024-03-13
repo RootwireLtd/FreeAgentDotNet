@@ -20,6 +20,24 @@ public class ContactServiceTests : BaseFreeAgentTest
             Email = "test@test.com",
         };
     }
+    
+    [Fact]
+    public async Task GetById()
+    {
+        var response = await _service.GetByIdAsync(145970);
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal("TESTORG - KEEP THIS", response.Data.Contact.OrganisationName);
+    }
+    
+    
+    [Fact]
+    public async Task GetAll()
+    {
+        var response = await _service.GetAllAsync();
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.NotNull(response.Data.Contacts);
+        Assert.NotEmpty(response.Data.Contacts);
+    }
 
     [Fact]
     public async Task Create()
@@ -28,14 +46,5 @@ public class ContactServiceTests : BaseFreeAgentTest
         Assert.NotNull(contactResponseModel);
         Assert.Equal(HttpStatusCode.Created, contactResponseModel.StatusCode);
     }
-
-    [Fact]
-    public async Task GetById()
-    {
-        var response = await _service.GetByIdAsync(145970);
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        Assert.Equal("TESTORG - KEEP THIS", response.Data.Contact.OrganisationName);
-    }
-
 
 }
