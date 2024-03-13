@@ -19,6 +19,8 @@ public class Contact : FreeAgentEntity
     public DateTime CreatedAt { get; set; }
     [JsonPropertyName("updated_at")]
     public DateTime UpdatedAt { get; set; }
+    [JsonPropertyName("email")]
+    public string? Email { get; set; }
     [JsonPropertyName("contact_name_on_invoices")]
     public bool? ContactNameOnInvoices { get; set; }
     [JsonPropertyName("country")]
