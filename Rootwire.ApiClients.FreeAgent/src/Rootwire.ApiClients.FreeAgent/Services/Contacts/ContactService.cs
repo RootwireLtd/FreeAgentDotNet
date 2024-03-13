@@ -41,12 +41,20 @@ public class ContactService
 
     public async Task<RestResponse<ContactListResponseModel>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var request = new RestRequest(BasePath, Method.Get);
+
+        var response = await _client.RestClient.ExecuteAsync<ContactListResponseModel>(request);
+
+        return response;
     }
 
-    public async Task<RestResponse<ContactResponseModel>> DeleteAsync(int id)
+    public async Task<RestResponse> DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var request = new RestRequest($"{BasePath}/{id}", Method.Delete);
+
+        var response = await _client.RestClient.ExecuteAsync(request);
+
+        return response;
     }
     
 }
