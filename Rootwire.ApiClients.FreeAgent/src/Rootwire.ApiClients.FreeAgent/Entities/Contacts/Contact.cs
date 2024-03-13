@@ -47,6 +47,8 @@ public class Contact : FreeAgentEntity
     [JsonPropertyName("uses_contact_level_email_settings")]
     public bool UsesContactLevelEmailSettings { get; set; }
 
+    [JsonPropertyName("parsed_id")] public int Id => GetResourceId();
+
     public int GetResourceId()
     {
         var segments = Url.Segments;

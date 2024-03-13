@@ -20,6 +20,7 @@ public class ContactTest : BaseFreeAgentTest
         Assert.IsType<ContactResponseModel>(contactResponseModel);
         Assert.NotNull(contactResponseModel.Contact.Url);
         Assert.Equal(145970, contactResponseModel.Contact.GetResourceId());
+        Assert.Equal(145970, contactResponseModel.Contact.Id);
     }
 
     [Fact]
