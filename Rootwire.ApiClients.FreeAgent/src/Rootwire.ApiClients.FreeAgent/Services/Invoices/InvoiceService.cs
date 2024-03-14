@@ -23,9 +23,8 @@ public class InvoiceService
         var request = new RestRequest(BasePath, Method.Post);
         
         InvoiceCreateModel invoiceCreateModel = new InvoiceCreateModel(createOptions);
-
-        var payload = JsonSerializer.Serialize(invoiceCreateModel);
-        request.AddJsonBody(payload);
+        
+        request.AddBody(invoiceCreateModel);
 
         var response = await _client.RestClient.ExecuteAsync<InvoiceResponseModel>(request);
 
