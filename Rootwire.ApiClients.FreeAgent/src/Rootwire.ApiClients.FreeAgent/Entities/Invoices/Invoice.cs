@@ -12,12 +12,12 @@ public class Invoice
     [JsonPropertyName("due_on")] public DateOnly DueOn { get; set; }
     [JsonPropertyName("reference")] public string Reference { get; set; }
     [JsonPropertyName("currency")] public string Currency { get; set; }
-    [JsonPropertyName("exchange_rate")] public string ExchangeRate { get; set; }
-    [JsonPropertyName("net_value")] public string NetValue { get; set; }
-    [JsonPropertyName("sales_tax_value")] public string SalesTaxValue { get; set; }
-    [JsonPropertyName("total_value")] public string TotalValue { get; set; }
-    [JsonPropertyName("paid_value")] public string PaidValue { get; set; }
-    [JsonPropertyName("due_value")] public string DueValue { get; set; }
+    [JsonPropertyName("exchange_rate")] public Decimal? ExchangeRate { get; set; }
+    [JsonPropertyName("net_value")] public Decimal NetValue { get; set; }
+    [JsonPropertyName("sales_tax_value")] public Decimal SalesTaxValue { get; set; }
+    [JsonPropertyName("total_value")] public Decimal TotalValue { get; set; }
+    [JsonPropertyName("paid_value")] public Decimal PaidValue { get; set; }
+    [JsonPropertyName("due_value")] public Decimal DueValue { get; set; }
     [JsonPropertyName("status")] public string Status { get; set; }
     [JsonPropertyName("long_status")] public string LongStatus { get; set; }
     [JsonPropertyName("comments")] public string Comments { get; set; }
@@ -90,7 +90,16 @@ public class Invoice
     public Uri? RecurringInvoice { get; set; }
 
     [JsonPropertyName("payment_url")] public Uri? PaymentUri { get; set; } = null;
-    [JsonPropertyName("invoice_items")] private List<InvoiceItem?> InvoiceItems { get; set; } = null;
+    [JsonPropertyName("invoice_items")] public List<InvoiceItem?>? InvoiceItems { get; set; } = null;
     
-    
+    [JsonPropertyName("parsed_id")] public int Id => GetResourceId();
+
+    public int GetResourceId()
+    {
+        var segments = Url.Segments;
+
+        int.TryParse(segments[segments.Length - 1].TrimEnd('/'), out var resourceId);
+
+        return resourceId;
+    }
 }

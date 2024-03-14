@@ -23,6 +23,10 @@ public static partial class FreeAgentFixtures
         {
             return InvoiceListJson;
         }
+        if (path == "v2/invoices/522695")
+        {
+            return InvoiceItemJson;
+        }
         else
         {
             throw new Exception("Fixture not found");

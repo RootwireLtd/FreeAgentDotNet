@@ -5,7 +5,7 @@ namespace Rootwire.ApiClients.FreeAgent.Entities.Invoices;
 public class InvoiceItem
 {
     [JsonPropertyName("url")] public Uri Url { get; set; }
-    [JsonPropertyName("position")] public Decimal Position { get; set; }
+    [JsonPropertyName("position")] public int Position { get; set; }
     [JsonPropertyName("item_type")] public string ItemType { get; set; }
     [JsonPropertyName("quantity")] public Decimal Quantity { get; set; }
     [JsonPropertyName("description")] public string Description { get; set; }
