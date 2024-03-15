@@ -25,5 +25,7 @@ public class CategoryTest : BaseFreeAgentTest
         Assert.Equal(2, categoryListResponseModel.IncomeCategories.Count);
         Assert.Equal(41, categoryListResponseModel.AdminExpenseCategories.Count);
         Assert.Equal(5, categoryListResponseModel.CostOfSalesCategories.Count);
+        Assert.Equal("001",categoryListResponseModel.IncomeCategories[0].Id);
     }
+    
 }

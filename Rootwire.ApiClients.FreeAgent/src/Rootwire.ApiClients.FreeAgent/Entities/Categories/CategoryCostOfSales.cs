@@ -11,4 +11,15 @@ public class CategoryCostOfSales : FreeAgentEntity
     [JsonPropertyName("allowable_for_tax")] public bool AllowableForTax { get; set; }
     [JsonPropertyName("tax_reporting_name")] public string TaxReportingName { get; set; }
     [JsonPropertyName("auto_sales_tax_rate")] public string AutoSalesTaxRate { get; set; }
+    
+    [JsonPropertyName("parsed_id")] public string Id => GetResourceId();
+
+    public string GetResourceId()
+    {
+        var segments = Url.Segments;
+
+        var resourceId = segments[segments.Length - 1].TrimEnd('/');
+
+        return resourceId;
+    }
 }
